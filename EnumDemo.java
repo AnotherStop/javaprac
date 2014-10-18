@@ -24,5 +24,6 @@ public class EnumDemo {
         for(Currency coin : Currency.values()){
             System.out.println("coin: " + coin.getValue());
         }
+
     }
 }
