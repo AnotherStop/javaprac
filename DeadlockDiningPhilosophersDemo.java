@@ -69,8 +69,20 @@ public class DeaklockDiningPhilosophersDemo{
 		Chopstick[] sticks = new Chopstick[size];
 		for(int i = 0;i < size;i++)
 			sticks[i] = new Chopstick();
+
+		/*
+			to prevent deadlock, see following comment
+		*/
 		for(int i = 0;i < size;i++)
 			exec.execute(new Philosopher(sticks[i], sticks[(i+1)%size],i,ponder));
+		/*
+		
+		for(int i = 0; i < size; i++)
+      		if(i < (size-1))
+        		exec.execute(new Philosopher(sticks[i], sticks[i+1], i, ponder));
+      		else
+      			exec.execute(new Philosopher(sticks[0], sticks[i], i, ponder));
+		*/
 
 		if(args.length == 3 && args[2].equals("timeout"))
 			TimeUnit.SECONDS.sleep(5);
