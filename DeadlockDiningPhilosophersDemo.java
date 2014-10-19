@@ -57,7 +57,7 @@ class Philosopher implements Runnable{
 	}
 }
 
-public class DiningPhilosophersDemo{
+public class DeaklockDiningPhilosophersDemo{
 	public static void main(String[] args) throws Exception{
 		int ponder = 5;
 		if(args.length > 0)
